@@ -1,0 +1,163 @@
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class=" d-flex justify-content-center">
+            <div class="mt-1" style="width: 500px;">
+                <div class="form-floating mb-3 tetx-center mt-5">
+                    <h2 class="text-center text-warning">Inpection Report</h2>
+                </div>
+                <form (ngSubmit)="submitForm()" #inspectionForm="ngForm" class="inspection-form">
+                  <div class="slider-group">
+                    <label for="overall" class="slider-label">Overall</label>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="overall"
+                        name="overall"
+                        [(ngModel)]="inspection.overall"
+                        min="0"
+                        max="100"
+                        step="1"
+                        class="slider"
+                        value={{inspection.overall}}
+                      />
+                      <label for="overall" class="slider-value">{{ inspection.overall }}</label>
+                    </div>
+                  </div>
+                  <div class="slider-group">
+                    <label for="tilework" class="slider-label">Tilework</label>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="tilework"
+                        name="tilework"
+                        [(ngModel)]="inspection.tilework"
+                        min="0"
+                        max="100"
+                        step="1"
+                        class="slider"
+                        value="inspection.tilework"
+                      />
+                      <label for="tilework" class="slider-value">{{ inspection.tilework }}</label>
+                    </div>
+                  </div>
+                  
+                  <div class="slider-group">
+                    <label for="woodwork" class="slider-label">Woodwork</label>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="woodwork"
+                        name="woodwork"
+                        [(ngModel)]="inspection.woodwork"
+                        min="0"
+                        max="100"
+                        step="1"
+                        class="slider"
+                        value="inspection.woodwork"
+
+                      />
+                      <label for="woodwork" class="slider-value">{{ inspection.woodwork }}</label>
+                    </div>
+                  </div>
+                  
+                  <div class="slider-group">
+                    <label for="walls" class="slider-label">Walls</label>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="walls"
+                        name="walls"
+                        [(ngModel)]="inspection.walls"
+                        min="0"
+                        max="100"
+                        step="1"
+                        class="slider"
+                        value="inspection.walls"
+                      />
+                      <label for="walls" class="slider-value">{{ inspection.walls }}</label>
+                    </div>
+                  </div>
+                  <div class="slider-group">
+                    <label for="walls" class="slider-label">Water Supply</label>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="water"
+                        name="water"
+                        [(ngModel)]="inspection.water"
+                        min="0"
+                        max="100"
+                        step="1"
+                        class="slider"
+                        value="inspection.water"
+                      />
+                      <label for="water" class="slider-value">{{ inspection.water }}</label>
+                    </div>
+                  </div>
+                  <div class="slider-group">
+                    <label for="walls" class="slider-label">Electricity</label>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="electricity"
+                        name="electricity"
+                        [(ngModel)]="inspection.electricity"
+                        min="0"
+                        max="100"
+                        step="1"
+                        class="slider"
+                        value="inspection.electricity"
+                      />
+                      <label for="electricity" class="slider-value">{{ inspection.electricity }}</label>
+                    </div>
+                  </div>
+                  <div class="slider-group">
+                    <label for="walls" class="slider-label">Severage</label>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="severage"
+                        name="severage"
+                        [(ngModel)]="inspection.severage"
+                        min="0"
+                        max="100"
+                        step="1"
+                        class="slider"
+                        value="inspection.severage"
+                      />
+                      <label for="severage" class="slider-value">{{ inspection.severage }}</label>
+                    </div>
+                  </div>
+                  <div class="slider-group">
+                    <label for="walls" class="slider-label">Paint</label>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="paint"
+                        name="paint"
+                        [(ngModel)]="inspection.paint"
+                        min="0"
+                        max="100"
+                        step="1"
+                        class="slider"
+                        value="inspection.paint"
+                      />
+                      <label for="paint" class="slider-value">{{ inspection.paint }}</label>
+                    </div>
+                  </div>
+
+                  
+                  
+                  
+                  <!-- Add more inspection categories here -->
+                  
+                  <button type="submit" [disabled]="inspectionForm.invalid" class="submit-button">Submit</button>
+                </form>
+                
+                
+                
+                  
+            </div>
+        </div>
+    </div>
+</div>

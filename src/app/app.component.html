@@ -1,0 +1,43 @@
+<body id="body-pd">
+  <header class="header" id="header" [ngClass]="{ hide: !loggedIn }">
+    <div class="header_toggle">
+      <i class="bx bx-menu" id="header-toggle"></i>
+    </div>
+  </header>
+  <div class="l-navbar" id="nav-bar" [ngClass]="{ hide: !loggedIn }">
+    <nav class="nav">
+      <div>
+        <a class="nav_logo">
+          <i class="bx bx-layer nav_logo-icon"></i>
+          <span class="nav_logo-name">ECard Dashboard</span>
+        </a>
+        <div class="nav_list">
+          <a routerLink="/cardsList" class="nav_link active">
+            <i class="bx bx-grid-alt nav_icon"></i>
+            <span class="nav_name">Dashboard</span>
+          </a>
+          <a routerLink="/renterDash" class="nav_link">
+            <i class="bx bx-user nav_icon"></i>
+            <span class="nav_name">Add Users</span>
+          </a>
+          <a routerLink="/resellerDash" class="nav_link">
+            <i class="bx bx-message-square-detail nav_icon"></i>
+            <span class="nav_name">Users List</span>
+          </a>
+          <a routerLink="/pending" class="nav_link">
+            <i class="bx bx-message-square-detail nav_icon"></i>
+            <span class="nav_name">Users List</span> </a
+          ><a routerLink="/liveHouses" class="nav_link">
+            <i class="bx bx-message-square-detail nav_icon"></i>
+            <span class="nav_name">Live Houses</span>
+          </a>
+          <a (click)="logout()" class="nav_link">
+            <i class="bx bx-log-out nav_icon"></i>
+            <span class="nav_name">SignOut</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <router-outlet></router-outlet>
+</body>

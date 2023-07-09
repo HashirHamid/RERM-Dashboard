@@ -1,0 +1,47 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col mt-5">
+      <h2 class="text-primary"> Ads List</h2>
+
+          <table id="example2" class="table table-hover">
+            <thead>
+              <tr>
+                <th >Name</th>
+                <th >Contact</th>
+                <th >Description</th>
+                <th>Price</th>
+                <th >State</th>
+                <th >City</th>
+                <th >Type</th>
+                <th >Image</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr *ngFor="let card of cards | filter:searchText;let i = index">
+                <td data-label="Name">{{card.title}}</td>
+                <td data-label="Contact">{{card.contact}}</td>
+                <td data-label="Description">{{card.description}}</td>
+                <td data-label="Price">{{card.price}}</td>
+                <td data-label="State">{{card.state}}</td>
+                <td data-label="City">{{card.city}}</td>
+                <td data-label="Type">{{card.type}}</td>
+                <td data-label="Image" style="width: 10%;"><img src="{{card.image[0]}}" alt="" style="width: 80%;"></td>
+                
+              </tr>
+              
+            </tbody>
+          </table>
+
+
+
+          <div class="pagination-buttons">
+            <button class="page-btn" *ngFor="let page of pageNumbers" (click)="changePage(page)"
+              [class.active]="page == selectedPage">{{page}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+

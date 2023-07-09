@@ -1,0 +1,39 @@
+
+<div class="container-fluid">
+
+    <div class="row">
+        
+        <div class="col mt-5">
+            <h2 class="text-primary"> Rentee List</h2>
+     
+                    <table id="example2" class="table table-hover">
+                        <thead>
+                          <tr>
+                            <!-- <th scope="col">Name</th> -->
+                            <th scope="col">Email</th>
+                            <th scope="col">CNIC</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Upload Receipt</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let user of users| filter:searchText;let i = index">
+                            <!-- <td>{{user.name}}</td> -->
+                            <td>{{user.email}}</td>
+                            <td>{{user.cnic}}</td>
+                            <td>{{user.password}}</td>
+                            <!-- <td><button id="cardsButton" [attr.data-index]="i" class="btn btn-light">See all cards</button></td> -->
+                            <td>
+                              <button id="cardEditButton" [attr.data-index]="i" class="btn btn-outline-primary" >Upload</button>
+                            </td>
+                            </tr>
+                                
+                        </tbody>
+                        
+                      </table>
+                      <div class="pagination-buttons" style="float:right;">
+                        <button  class="page-btn" *ngFor="let page of pageNumbers" (click)="changePage(page)" [class.active]="page == selectedPage">{{page}}</button>
+                      </div>
+                </div>
+              </div>
+</div>

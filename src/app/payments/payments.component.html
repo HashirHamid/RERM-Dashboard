@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h1 class="pt-4">Payments Page</h1>
+    
+    <table class="payments-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let month of months">
+          <td>{{ month }}</td>
+          <td>
+            <ng-container *ngIf="getImageUrl(month) !== ''; else noImage">
+                <img [src]="getImageUrl(month)" (click)="enlargeImage(month)">
+              </ng-container>
+              <ng-template #noImage>Not paid yet</ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="getImageUrl(month) !== ''; else noImage1;">
+                <ng-container *ngIf="checkPaid(month) == false; else paid;">
+                <button class="check-button" (click)="handleCheck(month)">
+                    <i class="fas fa-check"></i>
+                  </button>
+                  <button class="cross-button" (click)="handleCross(month)">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </ng-container>
+            </ng-container>
+            <ng-template #noImage1>Not paid yet</ng-template>
+            <ng-template #paid>Paid</ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

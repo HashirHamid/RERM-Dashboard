@@ -1,0 +1,53 @@
+<div class="container">
+
+  <div *ngIf="isLoading" class="progress-container mt-5">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+</div>
+
+<div *ngIf="!isLoading">
+<div class="container mt-5">
+  <h1 class="mt-5">Live Houses</h1>
+  
+  
+  <div class="dropdown-container mt-5">
+    <div class="dropdown mr-5">
+      <span>Select Ad:</span>
+      <select class="dropdown-select" [(ngModel)]="selectedOption1" >
+        <option value="" >Select Ad</option>
+        <option *ngFor="let option of adsList" [ngValue]="option">{{ option.title }}</option>
+      </select>
+    </div>
+    <div class="dropdown">
+      <span>Select Rentee:</span>
+
+      <select class="dropdown-select" [(ngModel)]="selectedOption2">
+        <option value="">Select Rentee</option>
+        <option *ngFor="let option of renteesList" [ngValue]="option">{{ option.email }}</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="submit-button" (click)="submit()">Live house</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>uid</th>
+        <th>adid</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData">
+        <td>{{ item.uid.email }}</td>
+        <td>{{ item.adid.title }}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/payments', item.uid.id]">Payments</button>
+          <button class="btn btn-primary" (click)="openFileExplorer(item.adid.creatorId)">Upload Agreement</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
